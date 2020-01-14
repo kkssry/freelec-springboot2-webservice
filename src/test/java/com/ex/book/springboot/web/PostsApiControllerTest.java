@@ -54,8 +54,7 @@ public class PostsApiControllerTest {
         String url = "http://127.0.0.1:" + port  + "/api/v1/posts";
 
         //when
-        ResponseEntity<Long> responseEntity = restTemplate.
-                postForEntity(url, requestDto, Long.class);
+        ResponseEntity<Long> responseEntity = restTemplate.postForEntity(url, requestDto, Long.class);
 
         //then
         assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
@@ -85,7 +84,7 @@ public class PostsApiControllerTest {
                 .content(expectedContent)
                 .build();
 
-        String url = "http://127.0.0.1:" + port + "/api/v1/posts/" + updateId;
+        String url = "http://localhost:" + port + "/api/v1/posts/" + updateId;
 
         HttpEntity<PostsUpdateRequestDto> requestEntity
                 = new HttpEntity<>(requestDto);
